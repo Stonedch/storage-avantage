@@ -21,4 +21,8 @@ module.exports = {
         path: src + "styles/",
     },
 
+    images: {
+        path: src + "images/",
+    },
+
 };
