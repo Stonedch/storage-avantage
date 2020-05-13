@@ -1,7 +1,11 @@
 {
-  "name": "storage-avantage",
-  "version": "0.1.0",
-  "main": "index.js",
-  "author": "Maxim Mukhin",
-  "license": "GNU GPL v3"
+    "name": "storage-avantage",
+    "version": "0.1.0",
+    "main": "gulpfile.js",
+    "author": "Maxim Mukhin",
+    "license": "GNU GPL v3",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-pug": "^4.0.1"
+    }
 }
