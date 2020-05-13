@@ -12,4 +12,9 @@ module.exports = {
         build,
     },
 
+    templates: {
+        path: src + "templates/",
+        beautifyHtml: true,
+    },
+
 };
