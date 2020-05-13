@@ -17,4 +17,8 @@ module.exports = {
         beautifyHtml: true,
     },
 
+    styles: {
+        path: src + "styles/",
+    },
+
 };
