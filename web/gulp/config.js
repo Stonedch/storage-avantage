@@ -21,6 +21,10 @@ module.exports = {
         path: src + "styles/",
     },
 
+    scripts: {
+        path: src + "scripts/",
+    },
+
     images: {
         path: src + "images/",
     },
