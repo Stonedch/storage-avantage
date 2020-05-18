@@ -4,6 +4,10 @@
     "main": "gulpfile.js",
     "author": "Maxim Mukhin",
     "license": "GNU GPL v3",
+    "scripts": {
+        "build": "gulp build:build",
+        "serve": "gulp serve:serve"
+    },
     "devDependencies": {
         "browser-sync": "^2.26.7",
         "gulp": "^4.0.2",
