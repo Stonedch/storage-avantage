@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 
-const config = require("../config");
+const config = require("../../config");
 
 function buildScripts(done) {
     gulp.src(config.scripts.path + "**/*")
@@ -9,4 +9,4 @@ function buildScripts(done) {
     done();
 }
 
-gulp.task("scripts:build", buildScripts);
+gulp.task("build:scripts", buildScripts);

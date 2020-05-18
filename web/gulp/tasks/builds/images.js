@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 
-const config = require("../config");
+const config = require("../../config");
 
 function buildImages(done) {
     gulp.src(config.images.path + "**/*")
@@ -9,4 +9,4 @@ function buildImages(done) {
     done();
 }
 
-gulp.task("images:build", buildImages);
+gulp.task("build:images", buildImages);
