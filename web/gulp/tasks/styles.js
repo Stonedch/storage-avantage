@@ -3,7 +3,7 @@ const sass = require("gulp-sass");
 
 const config = require("../config");
 
-function styles(done) {
+function buildStyles(done) {
     gulp.src(config.styles.path + "**/*.sass")
         .pipe(sass())
         .pipe(gulp.dest(config.paths.build + "styles/"));
@@ -11,4 +11,4 @@ function styles(done) {
     done();
 }
 
-gulp.task("styles", styles);
+gulp.task("styles:build", buildStyles);

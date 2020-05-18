@@ -3,7 +3,7 @@ const pug = require("gulp-pug");
 
 const config = require("../config");
 
-function templates(done) {
+function buildTemplates(done) {
     gulp.src(config.templates.path + "**/*.pug")
         .pipe(pug({pretty: config.templates.beautifyHtml}))
         .pipe(gulp.dest(config.paths.build + "templates"));
@@ -11,4 +11,4 @@ function templates(done) {
     done();
 }
 
-gulp.task("templates", templates);
+gulp.task("templates:build", buildTemplates);
