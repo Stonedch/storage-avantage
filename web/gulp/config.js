@@ -12,6 +12,14 @@ module.exports = {
         build,
     },
 
+    serve: {
+        server: {
+            baseDir: build,
+        },
+
+        port: 3000,
+    },
+
     templates: {
         path: src + "templates/",
         beautifyHtml: true,
