@@ -2,9 +2,11 @@ const gulp = require("gulp");
 
 const config = require("../config");
 
-gulp.task("images", function(done) {
+function images(done) {
     gulp.src(config.images.path + "**/*")
         .pipe(gulp.dest(config.paths.build + "images/"));
 
     done();
-});
+}
+
+gulp.task("images", images);
