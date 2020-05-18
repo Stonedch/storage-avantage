@@ -1,0 +1,102 @@
+body {
+  background-image: url("../images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+a {
+  text-decoration: none; }
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  filter: blur(3px); }
+
+.header {
+  color: #FFF;
+  background-color: #212121; }
+
+.page-content {
+  padding: 40px 40px;
+  max-width: 860px;
+  margin: 0 auto; }
+  .page-content .page-content__wrapper {
+    padding: 40px;
+    background: rgba(250, 250, 250, 0.6); }
+  .page-content .page-content--center {
+    display: flex;
+    justify-content: center; }
+
+.button {
+  background: rgba(33, 33, 33, 0.8);
+  color: #FFF; }
+  .button.button--bold {
+    font-weight: bold; }
+  .button:hover {
+    background: #212121; }
+
+.textfield {
+  width: 100%;
+  max-width: 100%; }
+  .textfield::after {
+    background: #212121; }
+  .textfield .textfield__input {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.8); }
+  .textfield .textfield__label {
+    color: rgba(33, 33, 33, 0.8); }
+
+.card {
+  background: rgba(33, 33, 33, 0.9); }
+  .card .card__media {
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #212121; }
+    .card .card__media .card__media-image {
+      width: 100%; }
+  .card .card__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFF; }
+    .card .card__title .card__title-text {
+      font-weight: bold;
+      font-size: 1em; }
+  .card .card__supporting {
+    padding: 16px;
+    text-align: center;
+    color: #FFF; }
+
+.button-list--end {
+  text-align: end; }
+
+.button-list__item {
+  margin: 5px 10px; }
+
+.mdl-button--file input {
+  cursor: pointer;
+  height: 100%;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 300px;
+  z-index: 4; }
+
+.mdl-textfield--file .mdl-textfield__input {
+  box-sizing: border-box;
+  width: calc(100% - 32px); }
+
+.mdl-textfield--file .mdl-button--file {
+  right: 0; }
+
+.info {
+  max-width: 100%;
+  padding: 20px;
+  background: rgba(33, 33, 33, 0.9); }
+  .info .info__text {
+    font-size: 1.2em;
+    color: #FFF; }
+    .info .info__text--bold {
+      font-weight: bold; }

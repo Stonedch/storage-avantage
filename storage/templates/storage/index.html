@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="{% static '/storage/styles/style.css' %}">
+    <title>Хранилище Авантаж</title>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="header mdl-layout__header">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Хранилище Авантаж</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="./product-add.html">Добавить товар</a></nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="./product-add.html">Добавить товар</a></nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="disabled page-content__wrapper">
+            <div class="page-content--center"><a class="button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="./product-add.html">Добавить новый товар</a></div>
+            <div class="page-content--center">
+              <form action="#">
+                <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="textfield__input mdl-textfield__input" id="sample3" type="text" autocomplete="off">
+                  <label class="textfield__label mdl-textfield__label" for="sample3"><i class="material-icons">search</i></label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="mdl-grid">
+            {% for product in product_list %}
+            <div class="card mdl-card mdl-cell mdl-cell--4-col demo-card-square mdl-card mdl-shadow--2dp">
+              <figure class="card__media mdl-card__media"><img class="card__media-image" src="{% static '/storage/images/card-demo.jpg' %}"></figure>
+              <div class="card__title mdl-card__title">
+                <h2 class="card__title-text mdl-card__title-text">{{ product.name }}</h2>
+              </div>
+              <div class="disabled card__supporting mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone"><a class="button mdl-button mdl-js-button mdl-button--fab" href="#"><i class="material-icons">delete</i></a></div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone"><a class="button mdl-button mdl-js-button mdl-button--fab" href="./product-add.html"><i class="material-icons">settings</i></a></div>
+                <div class="mdl-cell mdl-cell--4-col"><a class="button mdl-button mdl-js-button mdl-button--fab" href="./product-detail.html"><i class="material-icons">more</i></a></div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="{% static '/storage/scripts/script.js' %}"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
