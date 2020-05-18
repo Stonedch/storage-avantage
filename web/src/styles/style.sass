@@ -1,0 +1,104 @@
+body
+    background-image: url("../images/bg.jpg")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+a
+    text-decoration: none
+
+.disabled
+    user-select: none
+    pointer-events: none
+    filter: blur(3px)
+
+.header
+    color: #FFF
+    background-color: #212121
+
+.page-content
+    padding: 40px 40px
+    max-width: 860px
+    margin: 0 auto
+    .page-content__wrapper
+        padding: 40px
+        background: rgba(250,250,250,0.6)
+    .page-content--center
+        display: flex
+        justify-content: center
+
+.button
+    background: rgba(33,33,33 ,0.8)
+    color: #FFF
+    &.button--bold
+        font-weight: bold
+    &:hover
+        background: rgba(33,33,33 ,1)
+
+.textfield
+    width: 100%
+    max-width: 100%
+    &::after
+        background: #212121
+    .textfield__input
+        border-bottom: 1px solid rgba(33,33,33 ,0.8)
+    .textfield__label
+        color: rgba(33,33,33 ,0.8)
+
+.card
+    background: rgba(33,33,33,0.9)
+    .card__media
+        max-width: 100%
+        max-height: 400px
+        margin: 0
+        overflow: hidden
+        background-color: #212121
+        .card__media-image
+            width: 100%
+    .card__title
+        display: flex
+        justify-content: center
+        text-align: center
+        color: #FFF
+        .card__title-text
+            font-weight: bold
+            font-size: 1em
+    .card__supporting
+        padding: 16px
+        text-align: center
+        color: #FFF
+
+.button-list
+    &--end
+        text-align: end
+    &__item
+        margin: 5px 10px
+
+.mdl-button--file
+    input
+        cursor: pointer
+        height: 100%
+        right: 0
+        opacity: 0
+        position: absolute
+        top: 0
+        width: 300px
+        z-index: 4
+
+.mdl-textfield--file
+    .mdl-textfield__input
+        box-sizing: border-box
+        width: calc(100% - 32px)
+
+    .mdl-button--file
+        right: 0
+
+.info
+    max-width: 100%
+    padding: 20px
+    background: rgba(33,33,33,0.9)
+    .info__text
+        font-size: 1.2em
+        color: #FFF
+        &--bold
+            font-weight: bold

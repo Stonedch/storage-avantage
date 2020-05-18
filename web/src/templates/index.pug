@@ -1,0 +1,16 @@
+extends layout/wrapper
+
+block content
+
+    .page-content__wrapper
+        .page-content--center
+            a.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href="./product-add.html") Добавить новый товар
+
+        .page-content--center
+            form(action="#")
+                .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    input.textfield__input.mdl-textfield__input#sample3(type="text" autocomplete="off")
+                    label.textfield__label.mdl-textfield__label(for="sample3")
+                        i.material-icons search
+
+    include modules/product-card

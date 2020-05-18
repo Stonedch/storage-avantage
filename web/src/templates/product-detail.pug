@@ -1,0 +1,37 @@
+extends layout/wrapper
+
+block content
+    .page-content__wrapper
+        .mdl-grid
+            .mdl-cell.mdl-cell--6-col
+                .card.mdl-card.demo-card-square.mdl-card.mdl-shadow--2dp
+                    figure.card__media.mdl-card__media
+                        img.card__media-image(src="images/card-demo.jpg")
+                    .card__title.mdl-card__title
+                        h2.card__title-text.mdl-card__title-text Костюм "Профессионал"
+            .info.mdl-cell.mdl-cell--6-col
+                p.info__text
+                    span.info__text--bold Название:&ensp;
+                    span Костюм "Профессионал"
+                p.info__text
+                    span.info__text--bold Категория:&ensp;
+                    span Костюм рабочий, летний
+                p.info__text
+                    span.info__text--bold Размер:&ensp;
+                    span 53
+                p.info__text
+                    span.info__text--bold Тип ткани:&ensp;
+                    span ткань смесовая Гретта пл. 210 гр. м2 (50%х/б, 50%п/э) с ВО пропиткой
+                p.info__text
+                    span.info__text--bold Артикуль:&ensp;
+                    span КРЛ000Р53
+                p.info__text
+                    span.info__text--bold Цена:&ensp;
+                    span 700р.
+                p.info__text
+                    span.info__text--bold Количество на складе:&ensp;
+                    span 38шт.
+        .button-list.button-list--end
+            a.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href="./index.html") Вернуться
+            a.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href="#") Удалить
+            a.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href="./product-add.html") Редактировать
