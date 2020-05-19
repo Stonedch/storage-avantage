@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,36 +26,11 @@
           <div class="page-content__wrapper">
             <form class="form-create" action="{% url 'product_add_url' %}" method="POST">
               {% csrf_token %}
-              <div class="disabled textfield mdl-textfield mdl-js-textfield mdl-textfield--file">
-                <input class="mdl-textfield__input" id="uploadFile" placeholder="Изображение" type="text" readonly>
-                <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file"><i class="material-icons">attach_file</i>
-                  <input id="uploadBtn" type="file">
+              {% for field in form %}
+                <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {% render_field field type="text" class+="textfield__input mdl-textfield__input" %}
                 </div>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_name" name="product-name" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_name">Название</label>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_article" name="product-vendor-code" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_article">Артикул</label>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_category" name="product-category" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_category">Категория</label>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_price" name="product-price" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_price">Цена</label>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_amount" name="product-amount" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_amount">Количество</label>
-              </div>
-              <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="textfield__input mdl-textfield__input" id="input_category" name="product-size" type="text" autocomplete="off">
-                <label class="textfield__label mdl-textfield__label" for="input_category">Размер</label>
-              </div>
+              {% endfor %}
               <div class="button-list button-list--end"><a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_list_url' %}">Вернуться</a>
                 <button class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Сохранить</button>
               </div>

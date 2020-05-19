@@ -1,4 +1,5 @@
 from . import models
+from . import forms
 
 from django.shortcuts import render
 from django.shortcuts import reverse
@@ -19,9 +20,18 @@ class ProductListView(View):
 
 class ProductAddView(View):
     def get(self, request):
-        return render(request, "storage/product-add.html")
+        context = {
+            "form": forms.ProductForm(),
+        }
+
+        return render(request, "storage/product-add.html", context)
 
     def post(self, request):
+        product = forms.ProductForm(request.POST)
+
+        if product.is_valid():
+            product.save()
+
         return redirect(reverse("product_list_url"))
 
 
