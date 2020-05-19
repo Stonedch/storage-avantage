@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="{% static '/storage/styles/style.css' %}">
+    <title>Хранилище Авантаж</title>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="header mdl-layout__header">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Хранилище Авантаж</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="#">Добавить товар</a></nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="#">Добавить товар</a></nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="page-content__wrapper">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--6-col">
+                <div class="card mdl-card demo-card-square mdl-card mdl-shadow--2dp">
+                  <figure class="card__media mdl-card__media"><img class="card__media-image" src="#"></figure>
+                  <div class="card__title mdl-card__title">
+                    <h2 class="card__title-text mdl-card__title-text">{{ product.name }}</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="info mdl-cell mdl-cell--6-col">
+                <p class="info__text"><span class="info__text--bold">Название:&ensp;</span><span>{{ product.name }}</span></p>
+                <p class="info__text"><span class="info__text--bold">Артикул:&ensp;</span><span>{{ product.vendor_code }}</span></p>
+                <p class="info__text"><span class="info__text--bold">Категория:&ensp;</span><span>{{ product.category }}</span></p>
+                <p class="info__text"><span class="info__text--bold">Цена:&ensp;</span><span>{{ product.price }}</span></p>
+                <p class="info__text"><span class="info__text--bold">Количество на складе:&ensp;</span><span>{{ product.amount }}</span></p>
+                <p class="info__text"><span class="info__text--bold">Размер:&ensp;</span><span>{{ product.size }}</span></p>
+                <p class="disabled info__text"><span class="info__text--bold">Тип ткани:&ensp;</span><span>ткань смесовая Гретта пл. 210 гр. м2 (50%х/б, 50%п/э) с ВО пропиткой</span></p>
+              </div>
+            </div>
+            <div class="button-list button-list--end"><a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_list_url' %}">Вернуться</a><a class="disabled button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="#">Удалить</a><a class="disabled button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="./product-add.html">Редактировать</a></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="{% static '/storage/scripts/script.js' %}"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>

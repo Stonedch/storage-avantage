@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 class Category(models.Model):
@@ -26,6 +27,9 @@ class Product(models.Model):
     class Meta():
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+    
+    def get_absolute_url(self):
+        return reverse("product_detail_url", kwargs={"vendor_code": self.vendor_code})
     
     def __str__(self):
         return f"{self.category} - {self.name}"
