@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, verbose_name="Название")
 
     class Meta():
         verbose_name = "Категория"
@@ -13,14 +13,15 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=128)
-    article = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, verbose_name="Название")
+    vendor_code = models.CharField(max_length=128, verbose_name="Артикул")
     category = models.ForeignKey(
         Category, related_name="products",
-        on_delete=models.SET_NULL, null=True)
-    price = models.PositiveIntegerField()
-    amount = models.PositiveIntegerField()
-    size = models.PositiveIntegerField()
+        on_delete=models.SET_NULL, null=True,
+        verbose_name="Категория")
+    price = models.PositiveIntegerField(verbose_name="Цена")
+    amount = models.PositiveIntegerField(verbose_name="Количество")
+    size = models.PositiveIntegerField(verbose_name="Размер")
 
     class Meta():
         verbose_name = "Продукт"
