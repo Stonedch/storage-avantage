@@ -14,17 +14,17 @@
       <header class="header mdl-layout__header">
         <div class="mdl-layout__header-row"><span class="mdl-layout-title">Хранилище Авантаж</span>
           <div class="mdl-layout-spacer"></div>
-          <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="./product-add.html">Добавить товар</a></nav>
+          <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="mdl-navigation__link" href="{% url 'product_add_url' %}">Добавить товар</a></nav>
         </div>
       </header>
       <div class="mdl-layout__drawer">
-        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="disabled mdl-navigation__link" href="./product-add.html">Добавить товар</a></nav>
+        <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{% url 'product_list_url' %}">Домой</a><a class="mdl-navigation__link" href="{% url 'product_add_url' %}">Добавить товар</a></nav>
       </div>
       <main class="mdl-layout__content">
         <div class="page-content">
-          <div class="disabled page-content__wrapper">
-            <div class="page-content--center"><a class="button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="./product-add.html">Добавить новый товар</a></div>
-            <div class="page-content--center">
+          <div class="page-content__wrapper">
+            <div class="page-content--center"><a class="button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_add_url' %}">Добавить новый товар</a></div>
+            <div class="disabled page-content--center">
               <form action="#">
                 <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="textfield__input mdl-textfield__input" id="sample3" type="text" autocomplete="off">

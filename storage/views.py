@@ -1,6 +1,8 @@
 from . import models
 
 from django.shortcuts import render
+from django.shortcuts import reverse
+from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import View
 
@@ -14,6 +16,13 @@ class ProductListView(View):
         }
 
         return render(request, "storage/index.html", context)
+
+class ProductAddView(View):
+    def get(self, request):
+        return render(request, "storage/product-add.html")
+
+    def post(self, request):
+        return redirect(reverse("product_list_url"))
 
 
 class ProductDetailView(View):

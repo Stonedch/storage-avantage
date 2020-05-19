@@ -1,31 +1,28 @@
-form.form-create(action="#")
-    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--file
+form.form-create(action="#", method="POST")
+    .disabled.textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--file
         input#uploadFile.mdl-textfield__input(placeholder="Изображение" type="text" readonly)
         .mdl-button.mdl-button--primary.mdl-button--icon.mdl-button--file
             i.material-icons attach_file
             input#uploadBtn(type="file")
     .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_name(type="text" autocomplete="off")
+        input.textfield__input.mdl-textfield__input#input_name(name="product-name" type="text" autocomplete="off")
         label.textfield__label.mdl-textfield__label(for="input_name") Название
     .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_category(type="text" autocomplete="off")
+        input.textfield__input.mdl-textfield__input#input_article(name="product-vendor-code" type="text" autocomplete="off")
+        label.textfield__label.mdl-textfield__label(for="input_article") Артикул
+    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+        input.textfield__input.mdl-textfield__input#input_category(name="product-category" type="text" autocomplete="off")
         label.textfield__label.mdl-textfield__label(for="input_category") Категория
     .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_category(type="text" autocomplete="off")
-        label.textfield__label.mdl-textfield__label(for="input_category") Размер
-    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_material(type="text" autocomplete="off")
-        label.textfield__label.mdl-textfield__label(for="input_material") Тип ткани
-    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_article(type="text" autocomplete="off")
-        label.textfield__label.mdl-textfield__label(for="input_article") Артикуль
-    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_price(type="text" autocomplete="off")
+        input.textfield__input.mdl-textfield__input#input_price(name="product-price" type="text" autocomplete="off")
         label.textfield__label.mdl-textfield__label(for="input_price") Цена
     .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-        input.textfield__input.mdl-textfield__input#input_amount(type="text" autocomplete="off")
+        input.textfield__input.mdl-textfield__input#input_amount(name="product-amount" type="text" autocomplete="off")
         label.textfield__label.mdl-textfield__label(for="input_amount") Количество
+    .textfield.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+        input.textfield__input.mdl-textfield__input#input_category(name="product-size" type="text" autocomplete="off")
+        label.textfield__label.mdl-textfield__label(for="input_category") Размер
 
     .button-list.button-list--end
         a.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href="./index.html") Вернуться
-        button.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect() Сохранить
+        button.button-list__item.button.button--bold.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(type="submit") Сохранить
