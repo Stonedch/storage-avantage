@@ -5,15 +5,23 @@ from django.shortcuts import render
 from django.shortcuts import reverse
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 from django.views.generic import View
 
 
 class ProductListView(View):
     def get(self, request):
-        products = models.Product.objects.all()
+        search_query = request.GET.get("search", "")
+
+        if search_query:
+            products = models.Product.objects.filter(
+                Q(name__icontains=search_query) | Q(vendor_code__icontains=search_query))
+        else:
+            products = models.Product.objects.all()
 
         context = {
             "product_list": products,
+            "search": search_query
         }
 
         return render(request, "storage/index.html", context)

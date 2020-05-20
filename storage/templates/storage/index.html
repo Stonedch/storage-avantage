@@ -11,10 +11,10 @@
                 <a class="button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_add_url' %}"> Добавить новый товар </a>
             </div>
 
-            <div class="disabled page-content--center">
-                <form action="#">
+            <div class="page-content--center">
+                <form action="{% url 'product_list_url' %}">
                     <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="textfield__input mdl-textfield__input" id="sample3" type="text" autocomplete="off">
+                        <input class="textfield__input mdl-textfield__input" id="sample3" type="text" name="search" value="{{ search }}" autocomplete="off">
                         <label class="textfield__label mdl-textfield__label" for="sample3"><i class="material-icons">search</i></label>
                     </div>
                 </form>
