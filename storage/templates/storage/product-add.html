@@ -7,14 +7,25 @@
     <div class="page-content">
 
         <div class="page-content__wrapper">
-            <form class="form-create" action="{% url 'product_add_url' %}" method="POST">
+            <form class="form-create" action="{% url 'product_add_url' %}" method="POST" enctype=multipart/form-data>
 
                 {% csrf_token %}
 
+
                 {% for field in form %}
-                    <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        {% render_field field type="text" class+="textfield__input mdl-textfield__input" %}
-                    </div>
+                    {% if field == form.image %}
+                        <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--file">
+                            <input id="id_image_text" class="mdl-textfield__input" placeholder="Изображение" type="text" readonly>
+                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                <i class="material-icons"> attach_file </i>
+                                {% render_field form.image %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            {% render_field field class+="textfield__input mdl-textfield__input" %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
 
             <div class="button-list button-list--end">

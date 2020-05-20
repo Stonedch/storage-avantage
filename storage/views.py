@@ -27,7 +27,7 @@ class ProductAddView(View):
         return render(request, "storage/product-add.html", context)
 
     def post(self, request):
-        product = forms.ProductForm(request.POST)
+        product = forms.ProductForm(request.POST, request.FILES)
 
         if product.is_valid():
             product.save()
