@@ -20,6 +20,11 @@ a {
     background-color: #212121;
 }
 
+    .header__icon {
+        margin: 0 0 5px 0;
+        max-width: 30px;
+    }
+
 .page-content {
     padding: 40px 40px;
     max-width: 860px;

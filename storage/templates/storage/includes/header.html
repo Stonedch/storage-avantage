@@ -1,7 +1,11 @@
+{% load static %}
+
 <header class="header mdl-layout__header">
     <div class="mdl-layout__header-row">
         <span class="mdl-layout-title"> Хранилище Авантаж </span>
         <div class="mdl-layout-spacer"></div>
+        <img class="header__icon" src="{% static '/storage/images/ranbow-icon.svg' %}">
+        <div class="mdl-layout-spacer mdl-layout--large-screen-only"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="{% url 'product_list_url' %}"> Домой </a>
             <a class="mdl-navigation__link" href="{% url 'product_add_url' %}"> Добавить товар </a>
