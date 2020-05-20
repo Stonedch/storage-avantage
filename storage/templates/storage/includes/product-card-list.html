@@ -1,0 +1,41 @@
+<div class="mdl-grid">
+
+    {% for product in product_list %}
+
+        <div class="card mdl-card mdl-cell mdl-cell--4-col demo-card-square mdl-card mdl-shadow--2dp">
+
+            <figure class="card__media mdl-card__media">
+                <img class="card__media-image" src="#">
+            </figure>
+
+            <div class="card__title mdl-card__title">
+                <h2 class="card__title-text mdl-card__title-text"> {{ product.name }} </h2>
+            </div>
+
+            <div class="card__supporting mdl-grid">
+
+                <div class="disabled mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                    <a class="button mdl-button mdl-js-button mdl-button--fab" href="#">
+                        <i class="material-icons"> delete </i>
+                    </a>
+                </div>
+
+                <div class="disabled mdl-cell mdl-cell--4-col mdl-cell--hide-phone">
+                    <a class="button mdl-button mdl-js-button mdl-button--fab" href="#">
+                        <i class="material-icons"> settings </i>
+                    </a>
+                </div>
+
+                <div class="mdl-cell mdl-cell--4-col">
+                    <a class="button mdl-button mdl-js-button mdl-button--fab" href="{{ product.get_absolute_url }}">
+                        <i class="material-icons"> more </i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>
