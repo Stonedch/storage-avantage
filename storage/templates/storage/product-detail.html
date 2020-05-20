@@ -57,7 +57,7 @@
             <div class="button-list button-list--end">
                 <a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_list_url' %}"> Вернуться </a>
                 <a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{{ product.get_delete_url }}"> Удалить </a>
-                <a class="disabled button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="#"> Редактировать </a>
+                <a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{{ product.get_update_url }}"> Редактировать </a>
             </div>
 
         </div>

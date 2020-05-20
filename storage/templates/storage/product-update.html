@@ -1,0 +1,30 @@
+{% extends "storage/base/base.html" %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <div class="page-content">
+
+        <div class="page-content__wrapper">
+            <form class="form-create" action="{{ product.get_update_url }}" method="POST" enctype=multipart/form-data>
+
+                {% csrf_token %}
+
+
+                {% for field in form %}
+                    <div class="textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {% render_field field class+="textfield__input mdl-textfield__input" %}
+                    </div>
+                {% endfor %}
+
+            <div class="button-list button-list--end">
+                <a class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{% url 'product_list_url' %}"> Вернуться </a>
+                <button class="button-list__item button button--bold mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit"> Обновить </button>
+            </div>
+
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

@@ -43,6 +43,29 @@ class ProductAddView(View):
         return redirect(reverse("product_list_url"))
 
 
+class ProductUpdateView(View):
+    def get(self, request, vendor_code):
+        product = get_object_or_404(models.Product, vendor_code__iexact=vendor_code)
+        form = forms.ProductForm(instance=product)
+
+        context = {
+            "form": form,
+        }
+
+        return render(request, "storage/product-update.html", context)
+    
+    def post(self, request, vendor_code):
+        product = models.Product.objects.get(vendor_code__iexact=vendor_code)
+        form = forms.ProductForm(request.POST, request.FILES, instance=product)
+
+        print(form.data)
+
+        if form.is_valid():
+            form.save()
+
+        return redirect(reverse("product_list_url"))
+
+
 class ProductDetailView(View):
     def get(self, request, vendor_code):
         product = get_object_or_404(models.Product, vendor_code__iexact=vendor_code)
