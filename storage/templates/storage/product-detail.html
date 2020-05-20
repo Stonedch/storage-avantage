@@ -31,10 +31,17 @@
                         <span> {{ product.vendor_code }} </span>
                     </p>
 
-                    <p class="info__text">
-                        <span class="info__text--bold"> Категория:&ensp; </span>
-                        <span> {{ product.category }} </span>
-                    </p>
+                    {% if product.category %}
+                        <p class="info__text">
+                            <span class="info__text--bold"> Категория:&ensp; </span>
+                            <span> {{ product.category }} </span>
+                        </p>
+                    {% else %}
+                        <p class="disabled info__text">
+                            <span class="info__text--bold"> Категория:&ensp; </span>
+                            <span> {{ product.category }} </span>
+                        </p>
+                    {% endif %}
 
                     <p class="info__text">
                         <span class="info__text--bold"> Цена:&ensp; </span>
