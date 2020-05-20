@@ -44,3 +44,11 @@ class ProductDetailView(View):
         }
 
         return render(request, "storage/product-detail.html", context)
+
+
+class ProductDeleteView(View):
+    def get(self, request, vendor_code):
+        product = models.Product.objects.get(vendor_code__iexact=vendor_code)
+        product.delete()
+
+        return redirect(reverse("product_list_url"))

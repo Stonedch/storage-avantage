@@ -40,6 +40,9 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse("product_detail_url", kwargs={"vendor_code": self.vendor_code})
+
+    def get_delete_url(self):
+        return reverse("product_delete_url", kwargs={"vendor_code": self.vendor_code})
     
     def __str__(self):
         return f"{self.vendor_code} - {self.name}"
