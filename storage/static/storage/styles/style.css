@@ -77,10 +77,6 @@ a {
         background: #212121;
     }
 
-    .textfield .textfield__input {
-        border-bottom: 1px solid rgba(33, 33, 33, 0.8);
-    }
-
     .textfield .textfield__label {
         color: rgba(33, 33, 33, 0.8);
     }
@@ -126,6 +122,7 @@ a {
 
 .mdl-textfield--file .mdl-button--file {
     right: 0;
+    color: #212121;
 }
 
 .info {
