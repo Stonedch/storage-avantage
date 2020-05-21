@@ -10,6 +10,7 @@ class ProductForm(forms.ModelForm):
         fields = [
             "name",
             "image",
+            "articul",
             "category",
             "price",
             "amount",
@@ -18,7 +19,7 @@ class ProductForm(forms.ModelForm):
 
         widgets = {
             "name": forms.TextInput(attrs={"placeholder": models.Product._meta.get_field("name").verbose_name }),
-            # "image": forms.ClearableFileInput(),
+            "articul": forms.TextInput(attrs={"placeholder": models.Product._meta.get_field("articul").verbose_name }),
             "price": forms.TextInput(attrs={"placeholder": models.Product._meta.get_field("price").verbose_name }),
             "amount": forms.TextInput(attrs={"placeholder": models.Product._meta.get_field("amount").verbose_name }),
             "size": forms.TextInput(attrs={"placeholder": models.Product._meta.get_field("size").verbose_name }),

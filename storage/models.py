@@ -19,7 +19,8 @@ class Product(models.Model):
         upload_to="products", default="none/no-image.jpg",
         blank="True",
         verbose_name="Изображение")
-    vendor_code = models.CharField(max_length=128, blank=True, unique=True, verbose_name="Артикул")
+    vendor_code = models.CharField(max_length=128, blank=True, unique=True, verbose_name="Внутренний код")
+    articul = models.CharField(max_length=128, verbose_name="Артикул")
     category = models.ForeignKey(
         Category, related_name="products",
         on_delete=models.SET_NULL,
