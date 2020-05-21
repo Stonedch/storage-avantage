@@ -17,5 +17,12 @@
     <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="{% url 'product_list_url' %}"> Домой </a>
         <a class="mdl-navigation__link" href="{% url 'product_add_url' %}"> Добавить товар </a>
+
+        {% if categories %}
+            {% for category in categories %}
+                <a class="mdl-navigation__link" href="{{ category.get_search_url }}"> {{ category.name }} </a>
+            {% endfor %}
+        {% endif %}
+
     </nav>
 </div>

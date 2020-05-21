@@ -8,6 +8,9 @@ class Category(models.Model):
     class Meta():
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
+
+    def get_search_url(self):
+        return reverse("product_list_url") + "?search=" + self.name
     
     def __str__(self):
         return self.name

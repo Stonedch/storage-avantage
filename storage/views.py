@@ -11,15 +11,18 @@ from django.views.generic import View
 
 class ProductListView(View):
     def get(self, request):
+        categories = models.Category.objects.all()
         search_query = request.GET.get("search", "")
 
         if search_query:
             products = models.Product.objects.filter(
-                Q(name__icontains=search_query) | Q(vendor_code__icontains=search_query))
+                Q(name__icontains=search_query) |
+                Q(category__name=search_query))
         else:
             products = models.Product.objects.all()
 
         context = {
+            "categories": categories,
             "product_list": products,
             "search": search_query
         }
